@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/user/postman','Admin\UserController@postman');//
 Route::get('/user/postman1','Admin\UserController@postman1');//
+
+Route::post('/api/auth','User\UserController@auth'); // 鉴权

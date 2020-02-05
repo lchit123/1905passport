@@ -193,5 +193,42 @@ class UserController extends Controller
 
    }
 
+   /**
+     * 接口鉴权
+     */
+    public function auth()
+    {
+        $uid = $_POST['uid'];
+        $token = $_POST['token'];
+
+        if(empty($_POST['uid']) || empty($_POST['token'])){
+            $response = [
+                'errno' => 40003,
+                'msg'   => 'Need token or uid'
+            ];
+            return $response;
+        }
+
+        $redis_token_key = 'str:user:token:'.$uid;
+
+        //验证token是否有效
+        $cache_token = Redis::get($redis_token_key);
+
+        if($token==$cache_token)        // token 有效
+        {
+            $response = [
+                'errno' => 0,
+                'msg'   => 'ok'
+            ];
+        }else{
+            $response = [
+                'errno' => 40003,
+                'msg'   => 'Token Not Valid!'
+            ];
+        }
+        return $response;
+    }
+
+
 
 }
