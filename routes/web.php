@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/user/postman','Admin\UserController@postman');//
+Route::get('/user/postman1','Admin\UserController@postman1');//
