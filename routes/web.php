@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test/check','TestController@md5test'); 
+
 Route::get('/user/postman','Admin\UserController@postman');//
 Route::get('/user/postman1','Admin\UserController@postman1');//
 
