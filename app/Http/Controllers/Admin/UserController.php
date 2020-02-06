@@ -209,6 +209,8 @@ class UserController extends Controller
             return $response;
         }
 
+        
+
         $redis_token_key = 'str:user:token:'.$uid;
 
         //验证token是否有效
@@ -226,6 +228,20 @@ class UserController extends Controller
                 'msg'   => 'Token Not Valid!'
             ];
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         return $response;
     }
 
