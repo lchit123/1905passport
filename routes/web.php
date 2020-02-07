@@ -19,5 +19,6 @@ Route::get('/test/check','TestController@md5test');
 
 Route::get('/user/postman','Admin\UserController@postman');//
 Route::get('/user/postman1','Admin\UserController@postman1');//
+Route::post('/test/check2','TestController@check2'); 	// 验证签名
 
 Route::post('/api/auth','User\UserController@auth'); // 鉴权
